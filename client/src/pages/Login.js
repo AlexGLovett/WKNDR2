@@ -15,9 +15,7 @@ class Login extends Component {
       <div>
         <h1>Your Adventure Begins Here</h1>
         <SignUp />
-        <li>
-          <SignIn />
-        </li>
+        <SignIn />
       </div>
     );
   }
