@@ -36,13 +36,13 @@ class App extends Component {
           <Switch>
             {
               user ?
-                <Route path="/" render={(props) => <Main {...props} user={user} />} />
+                <Route path="/" render={(props) => <Main {...props} user={user} signOutFunction={signOut} />} />
                 :
                 <Route path="/" render={(props) => <Login {...props} signInFunction={signInWithGoogle} />} />
             }
             {
               user ?
-                <Route path="/main" render={(props) => <Main {...props} user={user} />} />
+                <Route path="/main" render={(props) => <Main {...props} user={user} signOutFunction={signOut} />} />
                 :
                 <Route path="/main" render={(props) => <Login {...props} signInFunction={signInWithGoogle} />} />
             }
