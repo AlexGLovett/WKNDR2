@@ -29,9 +29,10 @@ class App extends Component {
       signOut
     } = this.props;
 
+    console.log(user);
     return (
       <div>
-        <Nav />
+        <Nav user={user} signOutFunction={signOut} signInFunction={signInWithGoogle} />
         <Router>
           <Switch>
             {
