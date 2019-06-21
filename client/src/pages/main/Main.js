@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Register from "../../components/Modals/Register";
+import Register from "../../components/modals/Register";
 import API from "../../utils/API";
 
 
@@ -24,10 +24,11 @@ class Main extends Component {
         return (
             <div>
                 <h5>Hello {this.props.user.displayName}</h5>
-                {this.state.registered ?
-                    <p>Welcome Back!</p>
-                    :
-                    <Register user={this.props.user} />
+                {
+                    this.state.registered ?
+                        <p>Welcome Back!</p>
+                        :
+                        <Register user={this.props.user} />
                 }
             </div>
         );

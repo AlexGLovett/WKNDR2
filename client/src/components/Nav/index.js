@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "react-materialize";
+import { Button, Navbar } from "react-materialize";
 
 class Nav extends Component {
   render() {
@@ -7,17 +7,14 @@ class Nav extends Component {
     const { user, signOutFunction, signInFunction } = this.props
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a className="navbar-brand" href="/">
-          WKNDR
-        </a>
+      <Navbar brand={<a href="/">WKNDR</a>} alignLinks="right">
         {
           user ?
-            <Button onClick={signOutFunction}>Sign Out</Button>
+            <Button className="right-align" onClick={signOutFunction}>Sign Out</Button>
             :
-            <Button onClick={signInFunction}>Sign In</Button>
+            <Button className="right-align" onClick={signInFunction}>Sign In</Button>
         }
-      </nav>
+      </Navbar>
     );
   }
 

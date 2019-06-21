@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Modal, Button, TextInput, Row, Col, Checkbox } from 'react-materialize';
 import API from '../../../utils/API';
 
-class SignUp extends Component {
+class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -91,4 +91,4 @@ class SignUp extends Component {
 }
 
 
-export default SignUp;
+export default Register;

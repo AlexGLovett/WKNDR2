@@ -6,7 +6,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './auth/firebaseConfig';
 
-import Nav from "./components/Nav";
+import Nav from "./components/nav";
 import Login from "./pages/login/Login";
 import Main from "./pages/main/Main";
 
