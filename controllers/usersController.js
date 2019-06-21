@@ -1,33 +1,28 @@
 const db = require("../models");
 
-// Defining methods for the ItinerarysController
+// Defining methods for the User Controller
 module.exports = {
-  findUserById: function(req, res) {
-    db.User.findById(req.params.oauthid)
+  findUser: function (req, res) {
+    db.User.findById(req.params.uid)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  createUser: function(req, res) {
+  createUser: function (req, res) {
     db.User.create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  updateUser: function(req, res) {
-    db.User.findOneAndUpdate({ _id: req.params.id }, req.body, {
+  updateUser: function (req, res) {
+    db.User.findOneAndUpdate({ uid: req.params.uid }, req.body, {
       new: true,
       upsert: true
     })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  deleteUser: function(req, res) {
-    db.User.findOneAndDelete({ _id: req.params.id })
+  deleteUser: function (req, res) {
+    db.User.findOneAndDelete({ uid: req.params.uid })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-    // db.Itinerary
-    //   .findById({ _id: req.params.id })
-    //   .then(dbModel => dbModel.remove())
-    //   .then(dbModel => res.json(dbModel))
-    //   .catch(err => res.status(422).json(err));
   }
 };

@@ -1,21 +1,34 @@
 import React, { Component } from "react";
-import { Button } from "react-materialize";
-
-//import API from "../utils/API";
+import Register from "../../components/Modals/Register";
+import API from "../../utils/API";
 
 
 class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { uid: props.user.uid, user: {}, registered: false };
+    }
 
+    componentDidMount() {
+        this.loadUser();
+    }
+
+    loadUser = () => {
+        API.findUser(this.state.uid)
+            .then(res => this.setState({ user: res.data, registered: true }))
+            .catch(err => console.log(err));
+    };
 
     render() {
 
-        const { user, signOutFunction } = this.props;
-
         return (
             <div>
-                <h1>Your Journey Is Just a Few Steps Away...</h1>
-                <p>Hello {user.displayName}</p>
-                <Button onClick={signOutFunction}>Sign Out</Button>
+                <h5>Hello {this.props.user.displayName}</h5>
+                {this.state.registered ?
+                    <p>Welcome Back!</p>
+                    :
+                    <Register />
+                }
             </div>
         );
     }

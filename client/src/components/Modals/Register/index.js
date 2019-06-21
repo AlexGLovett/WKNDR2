@@ -6,7 +6,7 @@ class SignUp extends Component {
 
     render() {
         return (
-            <Modal header="Sign Up" fixedFooter trigger={<Button>Sign Up</Button>} actions={<Button modal="close">Go!</Button>}>
+            <Modal open={true} header="Let's Get Started!" fixedFooter actions={<Button modal="close">Go!</Button>}>
                 <Row s={10}>
                     <Col s={6}>
                         <TextInput type="number" name="inputAge" label="Age" />

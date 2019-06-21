@@ -29,7 +29,6 @@ class App extends Component {
       signOut
     } = this.props;
 
-    console.log(user);
     return (
       <div>
         <Nav user={user} signOutFunction={signOut} signInFunction={signInWithGoogle} />
