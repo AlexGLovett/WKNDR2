@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "wkdnr client",
   "private": true,
-  "proxy": "https://localhost:3001/",
+  "proxy": "http://localhost:3001/",
+  "HTTPS": true,
   "dependencies": {
     "axios": "^0.18.0",
     "firebase": "^6.2.0",

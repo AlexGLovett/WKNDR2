@@ -3,7 +3,7 @@ const db = require("../models");
 // Defining methods for the User Controller
 module.exports = {
   findUser: function (req, res) {
-    db.User.findById(req.params.uid)
+    db.User.findOne({ "uid": req.params.uid })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

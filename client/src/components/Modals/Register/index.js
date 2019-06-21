@@ -7,7 +7,7 @@ class SignUp extends Component {
         super(props);
         this.state = {
             valid: false,
-            zipcode: '12345',
+            zipcode: '',
             user: {
                 display_name: props.user.displayName,
                 email: props.user.email,
