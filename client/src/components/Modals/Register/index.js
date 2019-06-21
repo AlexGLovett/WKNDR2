@@ -3,16 +3,54 @@ import { Modal, Button, TextInput, Row, Col, Checkbox } from 'react-materialize'
 import API from '../../../utils/API';
 
 class SignUp extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            valid: false,
+            zipcode: '12345',
+            user: {
+                display_name: props.user.displayName,
+                email: props.user.email,
+                uid: props.user.uid,
+                zipcode: 0,
+                distance: 25,
+                interests: {
+                    outdoors: false,
+                    attractions: false,
+                    culture: false,
+                    food: false,
+                    nightlife: false,
+                    amusements: false,
+                    shopping: false,
+                    selfcare: false
+                }
+            }
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    };
+
+    handleChange(event) {
+        event.preventDefault();
+        let updatedUser = {};
+        Object.assign(updatedUser, this.state.user);
+        updatedUser.zipcode = event.target.value;
+        const regex = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+        const result = regex.test(updatedUser.zipcode);
+        this.setState({ user: updatedUser, valid: result, zipcode: event.target.value });
+    };
+
+    handleSubmit(event) {
+        event.preventDefault();
+        API.createUser(this.state.user);
+    };
 
     render() {
         return (
-            <Modal open={true} header="Let's Get Started!" fixedFooter actions={<Button modal="close">Go!</Button>}>
+            <Modal open={true} header="Let's Get Started!" fixedFooter options={{ dismissible: true }} actions={<Button disabled={this.state.valid ? false : true} modal="close" onClick={this.handleSubmit}>Go!</Button>}>
                 <Row s={10}>
                     <Col s={6}>
-                        <TextInput type="number" name="inputAge" label="Age" />
-                    </Col>
-                    <Col s={6}>
-                        <TextInput type="number" name="inputZipcode" label="Zipcode" />
+                        <TextInput name="inputZipcode" label="Zipcode" onChange={this.handleChange} value={this.state.zipcode} />
                     </Col>
                 </Row>
                 <Row s={10}>

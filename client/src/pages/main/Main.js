@@ -27,7 +27,7 @@ class Main extends Component {
                 {this.state.registered ?
                     <p>Welcome Back!</p>
                     :
-                    <Register />
+                    <Register user={this.props.user} />
                 }
             </div>
         );

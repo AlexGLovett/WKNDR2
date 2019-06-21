@@ -6,7 +6,7 @@ const userSchema = new Schema({
   email: { type: String, required: true },
   uid: { type: String, required: true },
   zipcode: { type: Number, required: true },
-  distances: { type: Object, required: true },
+  distance: { type: Number, required: true },
   interests: { type: Object, required: false },
   date: { type: Date, default: Date.now }
 });
