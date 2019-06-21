@@ -6,13 +6,13 @@
   "HTTPS": true,
   "proxy": {
     "/api": {
-      "target": "https://localhost:3000/",
+      "target": "localhost:3000/",
       "secure": false
     }
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": " source .env; node server.js",
+    "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && npm install",

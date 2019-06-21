@@ -1,7 +1,8 @@
+
 const config = {
-    apiKey: "AIzaSyD7ORV6YWWSFMfH_GiTvqhRq0ObkiQvpGg",
-    authDomain: "wkndr-228415.firebaseapp.com",
-    databaseURL: "https://wkndr-228415.firebaseio.com",
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
     projectId: "wkndr-228415",
     storageBucket: "wkndr-228415.appspot.com",
     messagingSenderId: "75810052745",
