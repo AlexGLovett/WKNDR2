@@ -47,7 +47,7 @@ class SignUp extends Component {
 
     render() {
         return (
-            <Modal open={true} header="Let's Get Started!" fixedFooter options={{ dismissible: true }} actions={<Button disabled={this.state.valid ? false : true} modal="close" onClick={this.handleSubmit}>Go!</Button>}>
+            <Modal open={true} header="Let's Get Started!" fixedFooter options={{ dismissible: false }} actions={<Button disabled={this.state.valid ? false : true} modal="close" onClick={this.handleSubmit}>Go!</Button>}>
                 <Row s={10}>
                     <Col s={6}>
                         <TextInput name="inputZipcode" label="Zipcode" onChange={this.handleChange} value={this.state.zipcode} />
