@@ -13,8 +13,6 @@ import Main from "./pages/main/Main";
 import "materialize-css/dist/css/materialize.css";
 import "materialize-css/dist/js/materialize.js";
 
-console.log(process.env);
-
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
 

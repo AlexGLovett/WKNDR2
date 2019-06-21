@@ -15,10 +15,8 @@ app.use(
 );
 app.use(express.json());
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "development") {
-  require('dotenv').config();
-}
-else if (process.env.NODE_ENV === "production") {
+
+if (process.env.NODE_ENV === "production") {
   // Set Static
   app.use(express.static("client/build"));
 
