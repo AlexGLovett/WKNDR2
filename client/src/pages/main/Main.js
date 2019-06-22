@@ -15,12 +15,16 @@ class Main extends Component {
 
     loadUser = () => {
         API.findUser(this.state.uid)
-            .then(res => this.setState({ user: res.data, registered: true }))
+            .then(res => {
+                res.data == null ?
+                    console.log("No User Found! Please Sign Up.")
+                    :
+                    this.setState({ user: res.data, registered: true })
+            })
             .catch(err => console.log(err));
     };
 
     render() {
-
         return (
             <div>
                 <h5>Hello {this.props.user.displayName}</h5>
