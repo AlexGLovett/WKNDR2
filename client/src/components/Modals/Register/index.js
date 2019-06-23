@@ -54,11 +54,8 @@ class Register extends Component {
     handleCheck(event) {
         const interest = event.target.value.toString().toLowerCase();
         let updatedUser = {};
-        //let updatedChecks = {};
         Object.assign(updatedUser, this.state.user);
-        //Object.assign(updatedChecks, this.state.checkedStates);
         updatedUser.interests[interest] = event.target.checked;
-        //updatedChecks.interest = event.target.checked;
         this.setState({ user: updatedUser });
     };
 
@@ -105,12 +102,9 @@ class Register extends Component {
                         </Col>
                     </Row>
                 </Row>
-
-
             </Modal>
         );
     }
 }
-
 
 export default Register;
