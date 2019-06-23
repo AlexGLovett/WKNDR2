@@ -54,12 +54,12 @@ class Register extends Component {
     handleCheck(event) {
         const interest = event.target.value.toString().toLowerCase();
         let updatedUser = {};
-        let updatedChecks = {};
+        //let updatedChecks = {};
         Object.assign(updatedUser, this.state.user);
-        Object.assign(updatedChecks, this.state.checkedStates);
+        //Object.assign(updatedChecks, this.state.checkedStates);
         updatedUser.interests[interest] = event.target.checked;
-        updatedChecks.interest = event.target.checked;
-        this.setState({ user: updatedUser, checkedStates: updatedChecks });
+        //updatedChecks.interest = event.target.checked;
+        this.setState({ user: updatedUser });
     };
 
     handleSubmit(event) {
@@ -78,30 +78,30 @@ class Register extends Component {
                 <Row s={10}>
                     <Row s={12}>
                         <Col s={3}>
-                            <Checkbox value="Outdoors" label="Outdoors" onChange={this.handleCheck} checked={this.state.checkedStates.outdoors} />
+                            <Checkbox value="Outdoors" label="Outdoors" onChange={this.handleCheck} indeterminate />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="Attractions" label="Attractions" onChange={this.handleCheck} checked={this.state.checkedStates.attractions} />
+                            <Checkbox value="Attractions" label="Attractions" onChange={this.handleCheck} indeterminate />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="Culture" label="Culture" onChange={this.handleCheck} checked={this.state.checkedStates.culture} />
+                            <Checkbox value="Culture" label="Culture" onChange={this.handleCheck} indeterminate />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="Food" label="Food" onChange={this.handleCheck} checked={this.state.checkedStates.food} />
+                            <Checkbox value="Food" label="Food" onChange={this.handleCheck} indeterminate />
                         </Col>
                     </Row>
                     <Row s={12}>
                         <Col s={3}>
-                            <Checkbox value="NightLife" label="NightLife" onChange={this.handleCheck} checked={this.state.checkedStates.nightlife} />
+                            <Checkbox value="NightLife" label="NightLife" onChange={this.handleCheck} indeterminate />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="Amusements" label="Amusements" onChange={this.handleCheck} checked={this.state.checkedStates.amusements} />
+                            <Checkbox value="Amusements" label="Amusements" onChange={this.handleCheck} indeterminate />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="Shopping" label="Shopping" onChange={this.handleCheck} checked={this.state.checkedStates.shopping} />
+                            <Checkbox value="Shopping" label="Shopping" onChange={this.handleCheck} indeterminate />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="SelfCare" label="SelfCare" onChange={this.handleCheck} checked={this.state.checkedStates.selfcare} />
+                            <Checkbox value="SelfCare" label="SelfCare" onChange={this.handleCheck} indeterminate />
                         </Col>
                     </Row>
                 </Row>
