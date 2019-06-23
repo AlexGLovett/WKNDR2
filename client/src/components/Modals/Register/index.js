@@ -24,6 +24,16 @@ class Register extends Component {
                     shopping: false,
                     selfcare: false
                 }
+            },
+            checkedStates: {
+                outdoors: false,
+                attractions: false,
+                culture: false,
+                food: false,
+                nightlife: false,
+                amusements: false,
+                shopping: false,
+                selfcare: false
             }
         };
         this.handleChange = this.handleChange.bind(this);
@@ -42,17 +52,18 @@ class Register extends Component {
     };
 
     handleCheck(event) {
-        event.preventDefault();
-        const interest = event.target.value;
+        const interest = event.target.value.toString().toLowerCase();
         let updatedUser = {};
+        let updatedChecks = {};
         Object.assign(updatedUser, this.state.user);
-        updatedUser.interests[interest.toString().toLowerCase()] = event.target.checked;
-        this.setState({ user: updatedUser });
+        Object.assign(updatedChecks, this.state.checkedStates);
+        updatedUser.interests[interest] = event.target.checked;
+        updatedChecks.interest = event.target.checked;
+        this.setState({ user: updatedUser, checkedStates: updatedChecks });
     };
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.state.user);
         API.createUser(this.state.user);
     };
 
@@ -67,30 +78,30 @@ class Register extends Component {
                 <Row s={10}>
                     <Row s={12}>
                         <Col s={3}>
-                            <Checkbox value="Outdoors" label="Outdoors" onChange={this.handleCheck} indeterminate />
+                            <Checkbox value="Outdoors" label="Outdoors" onChange={this.handleCheck} checked={this.state.checkedStates.outdoors} />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="Attractions" label="Attractions" onChange={this.handleCheck} indeterminate />
+                            <Checkbox value="Attractions" label="Attractions" onChange={this.handleCheck} checked={this.state.checkedStates.attractions} />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="Culture" label="Culture" onChange={this.handleCheck} indeterminate />
+                            <Checkbox value="Culture" label="Culture" onChange={this.handleCheck} checked={this.state.checkedStates.culture} />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="Food" label="Food" onChange={this.handleCheck} indeterminate />
+                            <Checkbox value="Food" label="Food" onChange={this.handleCheck} checked={this.state.checkedStates.food} />
                         </Col>
                     </Row>
                     <Row s={12}>
                         <Col s={3}>
-                            <Checkbox value="NightLife" label="NightLife" onChange={this.handleCheck} indeterminate />
+                            <Checkbox value="NightLife" label="NightLife" onChange={this.handleCheck} checked={this.state.checkedStates.nightlife} />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="Amusements" label="Amusements" onChange={this.handleCheck} indeterminate />
+                            <Checkbox value="Amusements" label="Amusements" onChange={this.handleCheck} checked={this.state.checkedStates.amusements} />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="Shopping" label="Shopping" onChange={this.handleCheck} indeterminate />
+                            <Checkbox value="Shopping" label="Shopping" onChange={this.handleCheck} checked={this.state.checkedStates.shopping} />
                         </Col>
                         <Col s={3}>
-                            <Checkbox value="SelfCare" label="SelfCare" onChange={this.handleCheck} indeterminate />
+                            <Checkbox value="SelfCare" label="SelfCare" onChange={this.handleCheck} checked={this.state.checkedStates.selfcare} />
                         </Col>
                     </Row>
                 </Row>
