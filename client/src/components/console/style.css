@@ -14,3 +14,8 @@
     min-height: 60vh;
     background: white;
 }
+#mapContainer div:first-child {
+    position: relative !important;
+    max-height: 700px !important;
+    max-width: 400px !important;
+}
