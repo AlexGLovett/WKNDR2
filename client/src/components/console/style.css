@@ -1,0 +1,12 @@
+.console-content {
+    min-height: 60vh;
+    background: grey;
+}
+#accountSettings{
+    min-height: 60vh;
+    background: white;
+}
+#itinerarySettings{
+    min-height: 60vh;
+    background: white;
+}

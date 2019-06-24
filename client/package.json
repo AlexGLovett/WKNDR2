@@ -8,6 +8,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "firebase": "^6.2.0",
+    "google-maps-react": "^2.0.2",
     "materialize-css": "^1.0.0",
     "react": "^16.6.3",
     "react-delay": "^0.1.0",
