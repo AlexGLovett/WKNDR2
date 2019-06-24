@@ -2,16 +2,12 @@ import React, { Component } from "react";
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 class MapContainer extends Component {
-    state = {
-        height: this.props.height,
-        width: this.props.width
-    };
 
     render() {
 
         const style = {
-            width: this.state.width,
-            height: this.state.height
+            width: this.props.width,
+            height: this.props.height
         };
 
         return (
@@ -22,7 +18,7 @@ class MapContainer extends Component {
                     lat: 33.7490,
                     lng: -84.3880
                 }}
-                zoom={14}>
+                zoom={10}>
             </Map>
         );
     }

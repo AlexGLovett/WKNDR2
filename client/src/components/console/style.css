@@ -13,9 +13,10 @@
 #mapContainer{
     min-height: 60vh;
     background: white;
+    overflow: hidden;
 }
 #mapContainer div:first-child {
     position: relative !important;
-    max-height: 700px !important;
-    max-width: 400px !important;
+    max-height: 60vh !important;
+    /* max-width: 800px !important; */
 }

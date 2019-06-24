@@ -13,32 +13,27 @@ class Console extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            height: null,
-            width: null
+            node: ""
         };
+        this.updateDimensions = this.updateDimensions.bind(this);
     };
 
     componentDidMount() {
-        var node = ReactDOM.findDOMNode(this.divElement);
-        const height = node.clientHeight;
-        const width = node.clientWidth;
-        console.log(height);
-        console.log(width);
-        this.setState({ height, width });
+        window.addEventListener("resize", this.updateDimensions);
+        const node = ReactDOM.findDOMNode(this.divElement);
+        this.setState({ node });
     };
 
-    componentDidUpdate() {
-        var node = ReactDOM.findDOMNode(this.divElement);
-        const height = node.clientHeight;
-        const width = node.clientWidth;
-        console.log(height);
-        console.log(width);
-        //this.setState({ height, width });
+    updateDimensions() {
+        const node = ReactDOM.findDOMNode(this.divElement);
+        this.setState({ node });
+    };
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateDimensions);
     };
 
     render() {
-
-
 
         return (
             <div className="container">
@@ -47,7 +42,7 @@ class Console extends Component {
                         Search and Account Settings Panel
                     </Col>
                     <Col m={6} s={12} id="mapContainer" ref={(divElement) => this.divElement = divElement}>
-                        <MapContainer height={this.state.height} width={this.state.width} />
+                        <MapContainer height={this.state.node.clientHeight} width={this.state.node.clientWidth} />
                     </Col>
                     <Col m={3} s={12} id="itinerarySettings">
                         Itinerary and Results Panel
