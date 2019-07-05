@@ -6,13 +6,15 @@ import { CardPanel, Col, Row, Icon } from "react-materialize";
 import "./style.css";
 
 import MapContainer from "../map/MapContainer/index";
+import Selector from "../settings/selector";
 
 
 class Console extends Component {
     state = {
         height: null,
-        width: null
+        width: null,
     };
+
     constructor(props) {
         super(props);
         this.updateDimensions = this.updateDimensions.bind(this);
@@ -39,12 +41,10 @@ class Console extends Component {
             <div className="container">
                 <Row>
                     <Col m={3} s={12} id="accountSettings">
-                        Search and Account Settings Panel
+                        <Selector />
                     </Col>
                     <Col m={6} s={12} id="mapContainer" ref={(divElement) => this.divElement = divElement}>
-                        {/* id="mapContainer"  */}
                         <MapContainer height={this.state.height} width={this.state.width} />
-                        {/*  */}
                     </Col>
                     <Col m={3} s={12} id="itinerarySettings">
                         Itinerary and Results Panel
