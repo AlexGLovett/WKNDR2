@@ -10,14 +10,22 @@ class MapContainer extends Component {
             height: this.props.height
         };
 
+        const contStyle = {
+            width: this.props.width,
+            height: this.props.height,
+            position: "relative"
+        };
+
         return (
             <Map
                 google={this.props.google}
+                containerStyle={contStyle}
                 style={style}
                 initialCenter={{
                     lat: 33.7490,
                     lng: -84.3880
                 }}
+                center={{}}
                 zoom={10}>
             </Map>
         );

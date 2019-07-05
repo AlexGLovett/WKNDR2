@@ -1,22 +1,18 @@
 .console-content {
-    min-height: 60vh;
+    min-height: 70vh;
     background: grey;
 }
 #accountSettings{
-    min-height: 60vh;
+    min-height: 70vh;
     background: white;
 }
 #itinerarySettings{
-    min-height: 60vh;
+    min-height: 70vh;
     background: white;
 }
 #mapContainer{
-    min-height: 60vh;
+    height: 70vh;
     background: white;
     overflow: hidden;
 }
-#mapContainer div:first-child {
-    position: relative !important;
-    max-height: 60vh !important;
-    /* max-width: 800px !important; */
-}
+
