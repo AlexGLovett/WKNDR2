@@ -2,7 +2,7 @@ export const SET_MAP_WINDOW = 'SET_MAP_WINDOW'
 export const SET_SETTINGS = 'SET_SETTINGS'
 export const SET_SEARCH_MODE = 'SET_SEARCH_MODE'
 
-export const MAP_WINDOW = {
+export const MapWindow = {
     height: 0,
     width: 0
 }
@@ -12,7 +12,7 @@ export const SearchModes = {
     LOCAL_MODE: 'LOCAL_MODE'
 }
 
-export const SETTINGS = {
+export const Settings = {
     sliders: {
         food: 2,
         shopping: 0,
