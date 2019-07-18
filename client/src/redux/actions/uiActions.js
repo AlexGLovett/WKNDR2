@@ -22,7 +22,6 @@ export const Sliders = {
     culture: 0,
     selfcare: 0,
     nightlife: 0,
-    remaining: 10,
 }
 
 export const Distance = 30;
@@ -31,11 +30,11 @@ export function setMapWindow(dims) {
     return { type: SET_MAP_WINDOW, dims }
 }
 
-export function setSliders(sliders) {
-    return { type: SET_SLIDERS, settings }
+export function setSliders(slider, value) {
+    return { type: SET_SLIDERS, slider, value }
 }
 
-export function setSettings(dist) {
+export function setDistance(dist) {
     return { type: SET_DISTANCE, dist }
 }
 
