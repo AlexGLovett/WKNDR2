@@ -32,6 +32,6 @@
     "mongoose": "^5.6.0",
     "negotiator": "^0.6.2",
     "styled-components": "^4.2.0",
-    "yarn": "^1.15.2"
+    "yarn": "^1.22.0"
   }
 }
